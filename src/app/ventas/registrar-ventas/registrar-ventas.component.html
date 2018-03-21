@@ -19,6 +19,11 @@
 		<small *ngIf="cantidad.touched && !cantidad.valid" id="emailHelp" class="form-text text-muted">La cantidad es incorrecta!!</small>
 	</div>
 	<div class="form-group">
+		<label for="exampleInputEmail1">Id Preventa</label>
+		<input type="text" class="form-control" id="idPreventaId" aria-describedby="emailHelp" placeholder="Preventa..." name="idPreventa" #idPreventa="ngModel" [(ngModel)]="venta.idPreventa" required pattern="[0-9]+">
+		<small *ngIf="idPreventa.touched && !idPreventa.valid" id="emailHelp" class="form-text text-muted">El ID Preventa es incorrecto!!</small>
+	</div>
+	<div class="form-group">
 		<label for="exampleInputEmail1">Cedula</label>
 		<input type="text" class="form-control" id="cedulaId" aria-describedby="emailHelp" placeholder="Cedula..." name="cedula" #cedula="ngModel" [(ngModel)]="usuario.cedula" required pattern="[0-9]+">
 		<small *ngIf="cedula.touched && !cedula.valid" id="emailHelp" class="form-text text-muted">La cedula es incorrecto!!</small>

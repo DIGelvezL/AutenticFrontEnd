@@ -28,7 +28,7 @@ export class RegistrarVentasComponent {
 
 	registrarVenta(){
     	this.venta.fechaVenta = new Date();
-    	this.venta.lugarDespacho = "Medellin";
+    	this.venta.lugarDespacho = "Villavicencio";
     	this.venta.usuario = this.usuario;
     	this.venta.producto = this.productoSeleccionado;
 
@@ -38,7 +38,7 @@ export class RegistrarVentasComponent {
 	guardarVenta(venta){
 		this._registrarVentaService.registrarVenta(venta).subscribe(
 			result => {
-				if(result.respuestaDto && result.respuestaDto.codigo == 0){
+				if(result.respuesta && result.respuesta.codigo == 0){
 					this.router.navigate(['consultar-ventas']); 
 					alert("Se guardó la venta correctamente.");     
                 }else{

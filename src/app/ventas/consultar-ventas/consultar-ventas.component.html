@@ -15,10 +15,9 @@
 
 	<table class="table" *ngIf="ventas">
 	  <tr>
-	    <th>NumeroVenta</th>
+	    <th>IdFactura</th>
 	    <th>FechaVenta</th> 
 	    <th>IdPreventa</th>
-	    <th>IdFactura</th>
 	    <th>LugarDespacho</th>
 	    <th>Cantidad</th>
 	    <th>CodigoProducto</th>
@@ -33,7 +32,6 @@
 	    <td>{{venta.id}}</td>
 	    <td>{{venta.fechaVenta}}</td> 
 	    <td>{{venta.idPreventa}}</td>
-	    <td>{{venta.idFactura}}</td>
 	    <td>{{venta.lugarDespacho}}</td>
 	    <td>{{venta.cantidad}}</td>
 	    <td>{{venta.producto.id}}</td>
