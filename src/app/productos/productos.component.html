@@ -1,0 +1,40 @@
+<br/>
+<br/>
+
+<main role="main" class="container" *ngIf="!esVenta">
+	<div class="album py-5 bg-light">
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let producto of productos">
+          		<div class="card mb-4 box-shadow">
+            		<div class="card-body">
+            			<h5 class="card-title" align="center"><strong>Codigo # {{producto.id}}</strong></h5>
+            			<p class="card-text" align="left"><strong>{{producto.nombre}}</strong></p>
+							    <p class="card-text" align="right"><strong>Valor: </strong>${{producto.valor}}</p>
+            			<div class="d-flex justify-content-between align-items-center">
+								    <div class="btn-group">
+									    <button type="button" class="btn btn-secondary" (click)="registrarVenta(producto)">Comprar</button>
+              			</div>
+            			</div>
+            		</div>
+        		  </div>
+          	</div>
+			     </div>
+
+			    <span *ngIf="!productos">Cargando listado...</span>
+        </div>
+	</div>
+</main>
+
+
+<br/>
+<br/>
+
+<main class="container" *ngIf="esVenta">
+  <div class="jumbotron">
+		<registrar-ventas [productoSeleccionado]="producto"></registrar-ventas>
+		<div align="right">
+			<button (click)="cancelar()" class="btn btn-danger"> Cancelar</button>
+		</div>
+	</div>
+</main>

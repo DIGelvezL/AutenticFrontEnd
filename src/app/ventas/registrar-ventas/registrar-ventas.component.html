@@ -1,0 +1,42 @@
+
+
+<div align="center">
+	<div class="col-md-4">
+		<div class="card mb-4 box-shadow">
+			<div class="card-body">
+				<h5 class="card-title" align="center"><strong>Venta del producto # {{productoSeleccionado.id}}</strong></h5>
+				<p class="card-text" align="left"><strong>Nombre: </strong>{{productoSeleccionado.nombre}}</p>
+				<p class="card-text" align="right"><strong>Valor: </strong>${{productoSeleccionado.valor}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form #formRegistrarVenta="ngForm" (ngSubmit)="registrarVenta()">
+	<div class="form-group">
+		<label for="exampleInputEmail1">Cantidad</label>
+		<input type="text" class="form-control" id="cantidadId" aria-describedby="emailHelp" placeholder="Cantidad..." name="cantidad" #cantidad="ngModel" [(ngModel)]="venta.cantidad" required pattern="[0-9]+">
+		<small *ngIf="cantidad.touched && !cantidad.valid" id="emailHelp" class="form-text text-muted">La cantidad es incorrecta!!</small>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Cedula</label>
+		<input type="text" class="form-control" id="cedulaId" aria-describedby="emailHelp" placeholder="Cedula..." name="cedula" #cedula="ngModel" [(ngModel)]="usuario.cedula" required pattern="[0-9]+">
+		<small *ngIf="cedula.touched && !cedula.valid" id="emailHelp" class="form-text text-muted">La cedula es incorrecto!!</small>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Nombre</label>
+		<input type="text" class="form-control" id="nombreId" aria-describedby="emailHelp" placeholder="Nombre..." name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" required>
+		<small *ngIf="nombre.touched && !nombre.valid" id="emailHelp" class="form-text text-muted">El nombre es incorrecto!!</small>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Apellido</label>
+		<input type="text" class="form-control" id="apellidoId" aria-describedby="emailHelp" placeholder="Apellido..." name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido" required>
+		<small *ngIf="apellido.touched && !apellido.valid" id="emailHelp" class="form-text text-muted">El apellido es incorrecto!!</small>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputEmail1">Telefono</label>
+		<input type="text" class="form-control" id="telefonoId" aria-describedby="emailHelp" placeholder="Telefono..." name="telefono" #telefono="ngModel" [(ngModel)]="usuario.telefono" required pattern="[0-9]+">
+		<small *ngIf="telefono.touched && !telefono.valid" id="emailHelp" class="form-text text-muted">El telefono es incorrecto!!</small>
+	</div>
+	<button type="submit" class="btn btn-secondary" [disabled]="!formRegistrarVenta.form.valid">Comprar</button>
+</form>

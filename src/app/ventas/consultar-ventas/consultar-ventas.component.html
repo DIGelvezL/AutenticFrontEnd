@@ -1,0 +1,50 @@
+<br/>
+<br/>
+<br/>
+
+<div align="center">
+	<h3>Haga click en Consultar</h3>
+
+	<button type="submit" class="btn btn-secondary" (click)="consultarVentas()" >Consultar</button>
+</div>
+<br/>
+<br/>
+
+<div align="center" class="listado" *ngIf="mostrarVentas">
+	<h3>Listado de Ventas</h3>
+
+	<table class="table" *ngIf="ventas">
+	  <tr>
+	    <th>NumeroVenta</th>
+	    <th>FechaVenta</th> 
+	    <th>IdPreventa</th>
+	    <th>IdFactura</th>
+	    <th>LugarDespacho</th>
+	    <th>Cantidad</th>
+	    <th>CodigoProducto</th>
+	    <th>NombreProducto</th>
+	    <th>Valor</th>
+	    <th>Cedula</th>
+	    <th>Nombre</th>
+	    <th>Apellido</th>
+	    <th>Telefono</th>
+	  </tr>
+	  <tr *ngFor="let venta of ventas">
+	    <td>{{venta.id}}</td>
+	    <td>{{venta.fechaVenta}}</td> 
+	    <td>{{venta.idPreventa}}</td>
+	    <td>{{venta.idFactura}}</td>
+	    <td>{{venta.lugarDespacho}}</td>
+	    <td>{{venta.cantidad}}</td>
+	    <td>{{venta.producto.id}}</td>
+	    <td>{{venta.producto.nombre}}</td>
+	    <td>{{venta.producto.valor}}</td>
+	    <td>{{venta.usuario.cedula}}</td>
+	    <td>{{venta.usuario.nombre}}</td>
+	    <td>{{venta.usuario.apellido}}</td>
+	    <td>{{venta.usuario.telefono}}</td>
+	  </tr>
+	</table>
+
+	<span *ngIf="!ventas">Cargando listado...</span>
+</div>
